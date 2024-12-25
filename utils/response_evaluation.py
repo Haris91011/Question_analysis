@@ -8,19 +8,16 @@ import os
 load_dotenv()
 
 output_parser = StrOutputParser()
-# openai_key = st.secrets["OPENAI_API_KEY"]
-# openai_model = st.secrets["OPENAI_MODEL"]
+openai_key = st.secrets["OPENAI_API_KEY"]
+openai_model = st.secrets["OPENAI_MODEL"]
 
-# # Set the environment variables (optional, if needed elsewhere)
-# os.environ["OPENAI_API_KEY"] = openai_key
-# os.environ["OPENAI_MODEL"] = openai_model
+# Set the environment variables (optional, if needed elsewhere)
+os.environ["OPENAI_API_KEY"] = openai_key
+os.environ["OPENAI_MODEL"] = openai_model
 
-# # Initialize the OpenAI LLM
-# llm = ChatOpenAI(model=openai_model, temperature=0)
+# Initialize the OpenAI LLM
+llm = ChatOpenAI(model=openai_model, temperature=0)
 
-
-openai_key=os.getenv("OPENAI_API_KEY")
-llm=ChatOpenAI(model=os.getenv("OPENAI_MODEL"),temperature=0)
 
 def get_evaluation_score(questions,responses):
 
